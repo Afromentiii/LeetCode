@@ -2,6 +2,20 @@
 
 # Regular Expression Matching
 
+## Opis problemu
+Mając dany ciąg wejściowy `s` oraz wzorzec `p`, zaimplementuj dopasowywanie wyrażeń regularnych z obsługą znaków `.` oraz `*`, gdzie:
+- `.` dopasowuje dowolny pojedynczy znak.
+- `*` dopasowuje zero lub więcej wystąpień elementu, który go poprzedza.
+
+Dopasowanie musi obejmować cały ciąg wejściowy (a nie tylko jego fragment).
+
+**Ograniczenia:**
+- `1 <= s.length <= 20`
+- `1 <= p.length <= 20`
+- `s` składa się wyłącznie z małych liter języka angielskiego.
+- `p` składa się z małych liter języka angielskiego, `.` oraz `*`.
+- Gwarantuje się, że dla każdego wystąpienia znaku `*`, poprzedzać go będzie prawidłowy znak do dopasowania.
+
 ## Zrealizowane cele
 - Opracowano rozwiązanie oparte na podejściu rekurencyjnym, pozwalające na ewaluację wyrażeń regularnych z wykorzystaniem znaków specjalnych (`.` oraz `*`).
 - Utworzono niestandardowy skrypt wsadowy (`run_tests.bat`), który automatyzuje proces testowania na wysoce zróżnicowanym zestawie 30 przypadków brzegowych zdefiniowanych w pliku tekstowym `payload.txt`.
