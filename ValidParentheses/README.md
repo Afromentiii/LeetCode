@@ -31,7 +31,7 @@ Wyjście: `false`
 ## Zrealizowane cele
 - Zaimplementowano klasyczne, optymalne rozwiązanie wykorzystujące strukturę stosu (`Stack`).
 - Osiągnięto złożoność czasową O(n), gdzie n to długość ciągu wejściowego `s`, z uwagi na fakt, że każdy znak jest przetwarzany dokładnie raz.
-- Skonstruowano elegancką logikę opartą o pojedynczą iterację, z natychmiastowym przerywaniem działania (Fail-Fast) w przypadku napotkania niezgodności.
+- Skonstruowano logikę opartą o pojedynczą iterację, z natychmiastowym przerywaniem działania (Fail-Fast) w przypadku napotkania niezgodności.
 
 ## Uzasadnienie i metodologia realizacji
 - Użycie struktury **Stosu (Stack)** jest modelowym sposobem podejścia do tego problemu. Architektura LIFO (Last-In-First-Out) idealnie odpowiada wymaganiu zamykania nawiasów w odwrotnej kolejności do ich otwierania (najpóźniej otwarty nawias musi zostać zamknięty jako pierwszy).
