@@ -28,7 +28,7 @@ Wyjście: `4`
 - `-10^4 <= target <= 10^4`
 
 ## Zrealizowane cele
-- Zaimplementowano klasyczne wyszukiwanie połówkowe (Binary Search) pozwalające zlokalizować pozycję w wielkich tablicach przy zachowaniu skrajnie optymalnego czasu.
+- Zaimplementowano klasyczne wyszukiwanie połówkowe (Binary Search) pozwalające zlokalizować pozycję w wielkich tablicach przy zachowaniu optymalnego czasu.
 - Osiągnięto wymagany wymóg dotyczący złożoności czasowej, czyli O(log n), co krok odrzucając połowę niesprawdzonej dotąd tablicy.
 - Złożoność pamięciowa zachowana na poziomie O(1), ponieważ algorytm używa tylko 3 prymitywnych zmiennych całkowitoliczbowych (`left`, `right`, `mid`), operując w całości w miejscu.
 - Klasa `Program` dostarcza proste środowisko testowe weryfikujące obsługę typowych operacji wstawiania na zewnątrz i do wewnątrz.
@@ -37,5 +37,5 @@ Wyjście: `4`
 - Użyto dwóch wskaźników klamrujących aktywny zakres poszukiwań: `left` (odpowiadający za lewy brzeg) oraz `right` (odpowiadający za prawy). Początkowo obejmują one całą wejściową tablicę.
 - Pętla `while (left <= right)` w każdej swojej iteracji wylicza środek obszaru `mid`. Aby zapobiec rzadkiemu, ale destrukcyjnemu wyjątkowi przepełnienia wartości granicznych typu `int` dla bardzo wielkich tablic (tzw. integer overflow), w rozwiązaniu zastosowano bezpieczne równanie `left + (right - left) / 2`.
 - Po odnalezieniu wartości pod indeksem `mid`, program po prostu go zwraca. Gdy wartość jest nieodpowiednia, algorytm albo zaostrza lewą klamrę (`left = mid + 1`), albo prawą klamrę (`right = mid - 1`), w jednym kroku weryfikując i odrzucając 50% pozostałych kandydatów.
-- Bardzo ważną i unikalną cechą tego wariantu operacji wyszukiwania jest fakt, że jeżeli poszukiwana liczba w ogóle nie znajduje się w tablicy (czyli pętla ostatecznie się wyczerpie przerywając warunek), wskaźnik `left` idealnie wskaże na najmniejszy z możliwych docelowych indeksów wstawienia w celu zachowania ciągłości sortowania.
+- Bardzo ważną i unikalną cechą tego wariantu operacji wyszukiwania jest fakt, że jeżeli poszukiwana liczba w ogóle nie znajduje się w tablicy (czyli pętla ostatecznie się wyczerpie przerywając warunek), wskaźnik `left` dokładnie wskaże na najmniejszy z możliwych docelowych indeksów wstawienia w celu zachowania ciągłości sortowania.
 </div>

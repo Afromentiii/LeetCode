@@ -17,11 +17,11 @@ Wyjście: `"10101"`
 
 ## Zrealizowane cele
 - Opracowano dwa niezależne rozwiązania oparte o ciągi znaków: wersję instrukcyjną (operującą na wskaźnikach logicznych i instrukcjach if-else) oraz mocno zoptymalizowaną wersję numeryczną (`AddBinaryFaster`), bazującą na matematycznym przeliczaniu reszty z dzielenia.
-- Zaprogramowano ominięcie ograniczeń 64-bitowych typów prostych, pozwalając na swobodne dodawanie gigantycznych ciągów rzędu 500+ znaków.
-- Przygotowano zautomatyzowane ramy testowe i potężną paczkę `payload.txt` z 5000 przypadków, która skutecznie weryfikuje poprawne wyliczanie sumy kontrolnej oraz porównuje czasy operacji poszczególnych algorytmów (wersja _Faster_ wykonuje zadanie niemalże dwukrotnie szybciej).
+- Zaprogramowano ominięcie ograniczeń 64-bitowych typów prostych, pozwalając na swobodne dodawanie bardzo dużych ciągów rzędu 500+ znaków.
+- Przygotowano zautomatyzowane ramy testowe i obszerną paczkę `payload.txt` z 5000 przypadków, która skutecznie weryfikuje poprawne wyliczanie sumy kontrolnej oraz porównuje czasy operacji poszczególnych algorytmów (wersja _Faster_ wykonuje zadanie znacznie szybciej).
 
 ## Wyniki testów wydajnościowych
-Przeprowadzono dedykowane, autorskie testy wydajnościowe mające na celu empiryczne potwierdzenie skuteczności wprowadzonych optymalizacji matematycznych. W środowisku .NET, używając wbudowanego stopera (`System.Diagnostics.Stopwatch`), wczytano ogromną paczkę `payload.txt`, w której przygotowano **5000 losowych przypadków testowych** o abstrakcyjnie ogromnej długości (ciągi bitowe do 500 znaków).
+Przeprowadzono dedykowane, autorskie testy wydajnościowe mające na celu empiryczne potwierdzenie skuteczności wprowadzonych optymalizacji matematycznych. W środowisku .NET, używając wbudowanego stopera (`System.Diagnostics.Stopwatch`), wczytano obszerną paczkę `payload.txt`, w której przygotowano **5000 losowych przypadków testowych** o bardzo dużej długości (ciągi bitowe do 500 znaków).
 
 Poniżej przedstawiono wyniki udowadniające zgodność obliczeń (identyczna ostateczna suma kontrolna wszystkich wyników) oraz ułamek czasu zajętego przez sprytniejszą matematykę z `AddBinaryFaster`:
 ```text

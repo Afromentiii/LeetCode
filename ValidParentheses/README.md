@@ -34,13 +34,13 @@ Wyjście: `false`
 - Skonstruowano logikę opartą o pojedynczą iterację, z natychmiastowym przerywaniem działania (Fail-Fast) w przypadku napotkania niezgodności.
 
 ## Uzasadnienie i metodologia realizacji
-- Użycie struktury **Stosu (Stack)** jest modelowym sposobem podejścia do tego problemu. Architektura LIFO (Last-In-First-Out) idealnie odpowiada wymaganiu zamykania nawiasów w odwrotnej kolejności do ich otwierania (najpóźniej otwarty nawias musi zostać zamknięty jako pierwszy).
+- Użycie struktury **Stosu (Stack)** jest modelowym sposobem podejścia do tego problemu. Architektura LIFO (Last-In-First-Out) dokładnie odpowiada wymaganiu zamykania nawiasów w odwrotnej kolejności do ich otwierania (najpóźniej otwarty nawias musi zostać zamknięty jako pierwszy).
 - Algorytm przechodzi pętlą po wszystkich znakach w napisie. Każdy znak otwierający jest bezpośrednio "wrzucany" na stos (`Push`).
 - Kiedy algorytm natrafia na znak zamykający, natychmiast próbuje zdjąć (`Pop`) ostatni element ze szczytu stosu. Jeśli stos jest już pusty (brak pasującego otwarcia) lub zdjęty nawias nie odpowiada typowi nawiasu zamykającego, ciąg jest nieprawidłowy, a program natychmiast przerywa działanie (`return false`).
 - Końcowym warunkiem pełnej zgodności, po przeanalizowaniu całego napisu, jest opróżniony stos (`stack.Count == 0`). Oznacza to, że dla każdego elementu otwierającego ostatecznie odnaleziono jego zamknięcie i żaden nawias nie pozostał samotny.
 
 ## Wady
 - Zastosowanie generycznej klasy `Stack<char>` ze standardowej biblioteki narzuca konieczność dynamicznej alokacji kolekcji na stercie. Oznacza to złożoność pamięciową O(n) w najgorszym pesymistycznym przypadku (np. ciąg składający się z tysięcy wyłącznie otwierających nawiasów).
-- Na potrzeby ultra-wydajnych operacji, użycie wbudowanej klasy stosu mogłoby stanowić mikrosekundowe opóźnienie w stosunku do rozwiązania niskopoziomowego, wykorzystującego chociażby zwykłą prealokowaną tablicę (`char[]`) i zmienną (indeks/pointer) pełniącą rolę mechanizmu przesuwania się w górę i w dół takiego pseudo-stosu.
+- Na potrzeby wysokowydajnych operacji, użycie wbudowanej klasy stosu mogłoby stanowić mikrosekundowe opóźnienie w stosunku do rozwiązania niskopoziomowego, wykorzystującego chociażby zwykłą prealokowaną tablicę (`char[]`) i zmienną (indeks/pointer) pełniącą rolę mechanizmu przesuwania się w górę i w dół takiego pseudo-stosu.
 
 </div>

@@ -26,7 +26,7 @@ Wyjście: `[1]`
 **Dodatkowe wyzwanie (Follow up):** Rozwiązanie rekurencyjne jest trywialne, czy potrafisz zrobić to iteracyjnie? (Obecnie w kodzie zaimplementowano wersję rekurencyjną).
 
 ## Zrealizowane cele
-- Zaimplementowano prawidłowe i niezwykle wydajne rozwiązanie oparte na rekurencji z wydzieloną, wyizolowaną metodą pomocniczą.
+- Zaimplementowano prawidłowe i bardzo wydajne rozwiązanie oparte na rekurencji z wydzieloną, wyizolowaną metodą pomocniczą.
 - Osiągnięto złożoność czasową rzędu O(n), co jest wartością najbardziej optymalną dla tego zadania, ponieważ konieczne jest jednorazowe odwiedzenie każdego z n węzłów.
 - Stworzono zestaw czterech precyzyjnych testów wraz z wbudowanym mikro-profilerem czasu (`Stopwatch`), co pozwala na obserwację czasu narzutu wirtualnej maszyny (.NET JIT) oraz testowanie wariantów brzegowych drzew o różnej budowie.
 
@@ -37,10 +37,10 @@ Wyjście: `[1]`
   1. Zejdź tak głęboko jak to możliwe w lewo (`Traverse(node.left)`).
   2. Po powrocie – przetwórz obecny węzeł na tym poziomie (`result.Add(node.val)`).
   3. Zejdź w prawo na tej samej zasadzie (`Traverse(node.right)`).
-- Ten porządek odwiedzin zapewnia na przykład, że gdyby do algorytmu załadowano Drzewo Poszukiwań Binarnych (BST), do tablicy dodane zostałyby perfekcyjnie rosnące, posortowane wartości.
+- Ten porządek odwiedzin zapewnia na przykład, że gdyby do algorytmu załadowano Drzewo Poszukiwań Binarnych (BST), do tablicy dodane zostałyby dokładnie rosnące, posortowane wartości.
 
 ## Wady
-- Rozwiązanie rekurencyjne wykorzystuje automatyczny stos wywołań, co zawsze oddelegowuje ryzyko błędu do środowiska. Dla głębokich i silnie zdegenerowanych (przypominających linię) drzew liczących dziesiątki tysięcy węzłów, taka konstrukcja pochłonęłaby gigantyczną ilość pamięci, natychmiast prowadząc do twardego uszkodzenia programu błędem `StackOverflowException`. 
-- Idealnym (choć niekiedy mniej eleganckim, jeśli chodzi o czytelność) sposobem zabezpieczenia się na skalę komercyjną byłoby przepisanie algorytmu na iterację z użyciem manualnej pętli `while` oraz jawnej deklaracji obiektu `Stack<TreeNode>`. Chroniłoby to nas przed awariami na poziomie samego stosu wykonawczego procesu.
+- Rozwiązanie rekurencyjne wykorzystuje automatyczny stos wywołań, co zawsze oddelegowuje ryzyko błędu do środowiska. Dla głębokich i silnie zdegenerowanych (przypominających linię) drzew liczących dziesiątki tysięcy węzłów, taka konstrukcja pochłonęłaby dużą ilość pamięci, natychmiast prowadząc do twardego uszkodzenia programu błędem `StackOverflowException`. 
+- optymalnym (choć niekiedy mniej eleganckim, jeśli chodzi o czytelność) sposobem zabezpieczenia się na skalę komercyjną byłoby przepisanie algorytmu na iterację z użyciem manualnej pętli `while` oraz jawnej deklaracji obiektu `Stack<TreeNode>`. Chroniłoby to nas przed awariami na poziomie samego stosu wykonawczego procesu.
 
 </div>

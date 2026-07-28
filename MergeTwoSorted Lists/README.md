@@ -36,6 +36,6 @@ Wyjście: `[0]`
 
 ## Wady
 - Samo w sobie algorytmiczne scalanie w tej implementacji praktycznie nie posiada słabych stron w kontekście typowych wyzwań LeetCode – działa w czasie liniowym i pochłania stałą pamięć pomocniczą O(1).
-- Rozwiązanie rekurencyjne (które również jest powszechne) zapewniłoby jeszcze czystszy kod bez atrapy (`dummy node`), ale obciążyłoby stos wywołań (Call Stack) złożonością pamięciową rzędu O(n + m), co mogłoby być problematyczne przy ekstremalnie długich listach w środowiskach produkcyjnych. Zaproponowane rozwiązanie iteracyjne jest wolne od tej wady.
+- Rozwiązanie rekurencyjne (które również jest powszechne) zapewniłoby jeszcze czystszy kod bez atrapy (`dummy node`), ale obciążyłoby stos wywołań (Call Stack) złożonością pamięciową rzędu O(n + m), co mogłoby być problematyczne przy bardzo długich listach w środowiskach produkcyjnych. Zaproponowane rozwiązanie iteracyjne jest wolne od tej wady.
 
 </div>

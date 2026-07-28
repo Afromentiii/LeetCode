@@ -21,7 +21,7 @@ Wyjście: `"amdma"`
 
 ## Zrealizowane cele
 - Zaimplementowano algorytm oparty na sortowaniu przez zliczanie (Counting Sort) dedykowany specjalnie do budowania strukturalnie poprawnego i najmniejszego alfabetycznie palindromu.
-- Zapewniono rewelacyjną złożoność czasową rzędu `O(N)`, gdzie `N` to długość łańcucha znaków (dzięki jednokrotnemu iterowaniu przez wyraz w celu zliczenia wystąpień znaków alfabetu, zamiast kosztownego sortowania typu `O(N log N)`).
+- Zapewniono bardzo dobrą złożoność czasową rzędu `O(N)`, gdzie `N` to długość łańcucha znaków (dzięki jednokrotnemu iterowaniu przez wyraz w celu zliczenia wystąpień znaków alfabetu, zamiast kosztownego sortowania typu `O(N log N)`).
 - Zaimplementowano pętlę testową (`Main`) udowadniającą optymalizację takich klasyków jak `racecar` czy `madam`.
 
 ## Uzasadnienie i metodologia realizacji
@@ -33,6 +33,6 @@ Całe rozwiązanie zostało zgrabnie oparte na czterech krokach zaproponowanych 
 
 ## Wady
 - Operacja `ToCharArray()` na pierwszej połówce, odwracanie jej przy pomocy `Array.Reverse` oraz budowanie nowych obieków typu `string` przy składaniu całości narzucają widoczny narzut czasowo-pamięciowy w języku C#. Złożoność pamięciowa to naturalne `O(N)`. Aby jeszcze bardziej zoptymalizować ten aspekt (np. pod systemy niskopoziomowe), wystarczyłoby alokować z góry jedną surową tablicę znaków `char[N]` i w tej samej pętli uzupełniać boki za pomocą dwóch zbiegających się z obu stron wskaźników, omijając jakiekolwiek rzutowanie i odwracanie stringów.
-- Obecna implementacja skupia się stricte na prawidłowych danych (ciągach, z których rzeczywiście *da się* uformować palindrom). Gdyby dostarczono wyraz posiadający wiele różnych liter o nieparzystych wystąpieniach, program po prostu uratuje pierwszą alfabetyczną literę wrzucając ją w środek, a resztę samotnych liter pominie przy dzieleniu całkowitym przez dwa.
+- Obecna implementacja skupia się wyłącznie na prawidłowych danych (ciągach, z których rzeczywiście *da się* uformować palindrom). Gdyby dostarczono wyraz posiadający wiele różnych liter o nieparzystych wystąpieniach, program po prostu uratuje pierwszą alfabetyczną literę wrzucając ją w środek, a resztę samotnych liter pominie przy dzieleniu całkowitym przez dwa.
 
 </div>
