@@ -10,10 +10,10 @@ public:
     bool containsDuplicate(vector<int>& nums) 
     {
         unordered_map<int, bool> seen;
-        for (int num : nums) {
-            if (seen.count(num)) {
+        for (int num : nums) 
+        {
+            if (seen.count(num)) 
                 return true;
-            }
             seen[num] = true;
         }
         return false;
